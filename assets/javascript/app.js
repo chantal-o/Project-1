@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+=======
+>>>>>>> d56fbd6757d427ed423f0d249de16023401cc6e8
 
 
   // Initialize Firebase
@@ -49,4 +69,9 @@
         distance: distance,
       });
 
+<<<<<<< HEAD
     });
+=======
+    });
+>>>>>>> 958e14910647f8cad70fe7a69753d789c7d5f525
+>>>>>>> d56fbd6757d427ed423f0d249de16023401cc6e8
