@@ -1,3 +1,29 @@
+
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#displaymap {
+  height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
 /*id's*/
 
 #button {
@@ -43,7 +69,3 @@
 
   
   /*classes*/
-<<<<<<< HEAD
-=======
-
->>>>>>> d56fbd6757d427ed423f0d249de16023401cc6e8

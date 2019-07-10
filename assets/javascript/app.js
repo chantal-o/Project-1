@@ -1,7 +1,37 @@
-<<<<<<< HEAD
+
+function initMap() {
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 7,
+    center: {lat: 43.6629, lng: -79.3957}
+  });
+  directionsDisplay.setMap(map);
+
+  var onChangeHandler = function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+  };
+  document.getElementById('start').addEventListener('change', onChangeHandler);
+  document.getElementById('end').addEventListener('change', onChangeHandler);
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: document.getElementById('start').value,
+    destination: document.getElementById('end').value,
+    travelMode: 'DRIVING'
+  }, function(response, status) {
+      console.log(response);
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
+
 =======
-<<<<<<< HEAD
->>>>>>> d56fbd6757d427ed423f0d249de16023401cc6e8
+>>>>>>> fe042cabe1a0693e37a2e31e0ad4d3acb5de60f9
 var btn = $('#button');
 
 $(window).scroll(function() {
@@ -16,10 +46,6 @@ btn.on('click', function(e) {
   e.preventDefault();
   $('html, body').animate({scrollTop:0}, '300');
 });
-
-<<<<<<< HEAD
-=======
-=======
 
 
   // Initialize Firebase
@@ -54,9 +80,7 @@ btn.on('click', function(e) {
       // Don't refresh the page!
       event.preventDefault();
 
-      // YOUR TASK!!!
-      // Code in the logic for storing and retrieving the most recent user.
-      // Don't forget to provide initial data to your Firebase database.
+    
       type = $("#vehicle-type").val().trim();
       year = $("#vehicle-year").val().trim();
       make = $("#vehicle-make").val().trim();
@@ -72,5 +96,3 @@ btn.on('click', function(e) {
       });
 
     });
->>>>>>> 958e14910647f8cad70fe7a69753d789c7d5f525
->>>>>>> d56fbd6757d427ed423f0d249de16023401cc6e8
