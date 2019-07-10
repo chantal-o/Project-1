@@ -1,6 +1,8 @@
 
 // var btn = $('#button');
 
+
+
 function initMap() {
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -25,7 +27,12 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   }, function(response, status) {
       console.log(response);
     if (status === 'OK') {
+
       directionsDisplay.setDirections(response);
+      
+      var distance = response.routes[0].legs[0].distance.value; 
+      console.log(distance);
+      $("#tripdistance").val(distance/1000);
     } else {
       window.alert('Directions request failed due to ' + status);
     }
@@ -82,8 +89,10 @@ $ (document).ready(function(){
       // Don't refresh the page!
       event.preventDefault();
 
+
       alert ("hello")
       
+
       type = $("#vehicle-type").val().trim();
       year = $("#vehicle-year").val().trim();
       make = $("#vehicle-make").val().trim();
