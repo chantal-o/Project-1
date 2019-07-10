@@ -1,4 +1,5 @@
 
+
 function initMap() {
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -30,6 +31,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   });
 }
 
+=======
 var btn = $('#button');
 
 $(window).scroll(function() {
@@ -79,9 +81,7 @@ btn.on('click', function(e) {
       // Don't refresh the page!
       event.preventDefault();
 
-      // YOUR TASK!!!
-      // Code in the logic for storing and retrieving the most recent user.
-      // Don't forget to provide initial data to your Firebase database.
+    
       type = $("#vehicle-type").val().trim();
       year = $("#vehicle-year").val().trim();
       make = $("#vehicle-make").val().trim();
