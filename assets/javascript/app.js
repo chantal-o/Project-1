@@ -1,4 +1,11 @@
 
+<<<<<<< HEAD
+=======
+// var btn = $('#button');
+
+
+
+>>>>>>> 11f39a878a6acb69857bfd10d5919e020ea620e5
 function initMap() {
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -23,31 +30,44 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   }, function(response, status) {
       console.log(response);
     if (status === 'OK') {
+
       directionsDisplay.setDirections(response);
+      
+      var distance = response.routes[0].legs[0].distance.value; 
+      console.log(distance);
+      $("#tripdistance").val(distance/1000);
     } else {
       window.alert('Directions request failed due to ' + status);
     }
   });
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> fe042cabe1a0693e37a2e31e0ad4d3acb5de60f9
+=======
+>>>>>>> 11f39a878a6acb69857bfd10d5919e020ea620e5
 var btn = $('#button');
 
-$(window).scroll(function() {
-  if ($(window).scrollTop() > 300) {
-    btn.addClass('show');
-  } else {
-    btn.removeClass('show');
-  }
-});
+// $(window).scroll(function() {
+//   if ($(window).scrollTop() > 300) {
+//     btn.addClass('show');
+//   } else {
+//     btn.removeClass('show');
+//   }
+// });
 
-btn.on('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
-});
+// btn.on('click', function(e) {
+//   e.preventDefault();
+//   $('html, body').animate({scrollTop:0}, '300');
+// });
 
 
+<<<<<<< HEAD
+=======
+$ (document).ready(function(){
+
+>>>>>>> 11f39a878a6acb69857bfd10d5919e020ea620e5
   // Initialize Firebase
  // This is the code we copied and pasted from our app page
     var config = {
@@ -80,12 +100,17 @@ btn.on('click', function(e) {
       // Don't refresh the page!
       event.preventDefault();
 
-    
+
+      alert ("hello")
+      
+
       type = $("#vehicle-type").val().trim();
       year = $("#vehicle-year").val().trim();
       make = $("#vehicle-make").val().trim();
       model = $("#vehicle-model").val().trim();
       distance = $("#distance-units").val().trim();
+
+      console.log (distance);
 
       database.ref().set({
         type: type,
@@ -94,5 +119,11 @@ btn.on('click', function(e) {
         model: model,
         distance: distance,
       });
+<<<<<<< HEAD
 
     });
+=======
+    });
+
+});
+>>>>>>> 11f39a878a6acb69857bfd10d5919e020ea620e5
