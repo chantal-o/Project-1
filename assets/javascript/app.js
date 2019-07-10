@@ -1,7 +1,38 @@
-// <<<<<<< HEAD
-// =======
-// <<<<<<< HEAD
+
 // var btn = $('#button');
+
+function initMap() {
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 7,
+    center: {lat: 43.6629, lng: -79.3957}
+  });
+  directionsDisplay.setMap(map);
+
+  var onChangeHandler = function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+  };
+  document.getElementById('start').addEventListener('change', onChangeHandler);
+  document.getElementById('end').addEventListener('change', onChangeHandler);
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: document.getElementById('start').value,
+    destination: document.getElementById('end').value,
+    travelMode: 'DRIVING'
+  }, function(response, status) {
+      console.log(response);
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
+
+var btn = $('#button');
 
 // $(window).scroll(function() {
 //   if ($(window).scrollTop() > 300) {
@@ -16,8 +47,7 @@
 //   $('html, body').animate({scrollTop:0}, '300');
 // });
 
-// =======
-// >>>>>>> d56fbd6757d427ed423f0d249de16023401cc6e8
+
 $ (document).ready(function(){
 
   // Initialize Firebase
@@ -72,9 +102,3 @@ $ (document).ready(function(){
     });
 
 });
-// <<<<<<< HEAD
-//     });
-// =======
-//     });
-// >>>>>>> 958e14910647f8cad70fe7a69753d789c7d5f525
-// >>>>>>> d56fbd6757d427ed423f0d249de16023401cc6e8
