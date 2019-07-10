@@ -1,3 +1,37 @@
+
+
+function initMap() {
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 7,
+    center: {lat: 43.6629, lng: -79.3957}
+  });
+  directionsDisplay.setMap(map);
+
+  var onChangeHandler = function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay);
+  };
+  document.getElementById('start').addEventListener('change', onChangeHandler);
+  document.getElementById('end').addEventListener('change', onChangeHandler);
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: document.getElementById('start').value,
+    destination: document.getElementById('end').value,
+    travelMode: 'DRIVING'
+  }, function(response, status) {
+      console.log(response);
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
+
+=======
 var btn = $('#button');
 
 $(window).scroll(function() {
@@ -47,9 +81,7 @@ btn.on('click', function(e) {
       // Don't refresh the page!
       event.preventDefault();
 
-      // YOUR TASK!!!
-      // Code in the logic for storing and retrieving the most recent user.
-      // Don't forget to provide initial data to your Firebase database.
+    
       type = $("#vehicle-type").val().trim();
       year = $("#vehicle-year").val().trim();
       make = $("#vehicle-make").val().trim();

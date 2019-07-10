@@ -5,9 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Carbon Emissions Calculator</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-      <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-      <link rel="stylesheet" type="text/js" href="assets/js/app.js"> 
+
    </head>
    
    <body>
@@ -17,12 +15,38 @@
       <a id="button"></a>
       
       <!--Map display jumbotron-->
+
+      <!--<div class="jumbotron jumbotron-fluid" id="displaymap">
+         <h1 class="display-title">Emissions Calculator</h1>
+         <div id="displaymap"></div>
+      </div>-->
+      <div id="floating-panel">
+            <b>Start: </b>
+            <select id="start">
+                <option value="toronto, on">Toronto</option>
+                <option value="chicago, il">Chicago</option>
+                <option value="detroit, mi">Detroit</option>            
+                <option value="ottawa, on">Ottawa</option>
+            </select>
+            <b>End: </b>
+            <select id="end">
+              <option value="toronto, on">Toronto</option>
+              <option value="chicago, il">Chicago</option>
+              <option value="detroit, mi">Detroit</option>
+              <option value="ottawa, on">Ottawa</option>
+            </select>
+            </div>
+            <div id="map"></div>
+      <div id="map"></div>
+      
+
       <div class="jumbotron jumbotron-fluid" id="displaymap">
          <div class="container">
             
             <h1 class="display-title">Emissions Calculator</h1>
          </div>
       </div>
+\
       <!-- Row for searching Edmunds API -->
       <div class="container">
       <div class="row">
@@ -98,9 +122,16 @@
             </div>
          </div>
       </div>
+      <script src="assets/javascript/app.js"></script>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBL9zZE_di6v1d0Sh3wb6S9ubALeRskAns&callback=initMap">
+      </script>
+   
+
       <script src="assets/javascript/app.js"></script>
 
       <!-- JQuery -->
@@ -113,5 +144,7 @@
 
        <!-- Specific Firebase products we want -->
        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
    </body>
+   
 </html>
