@@ -1,24 +1,24 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-var btn = $('#button');
+// <<<<<<< HEAD
+// =======
+// <<<<<<< HEAD
+// var btn = $('#button');
 
-$(window).scroll(function() {
-  if ($(window).scrollTop() > 300) {
-    btn.addClass('show');
-  } else {
-    btn.removeClass('show');
-  }
-});
+// $(window).scroll(function() {
+//   if ($(window).scrollTop() > 300) {
+//     btn.addClass('show');
+//   } else {
+//     btn.removeClass('show');
+//   }
+// });
 
-btn.on('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
-});
+// btn.on('click', function(e) {
+//   e.preventDefault();
+//   $('html, body').animate({scrollTop:0}, '300');
+// });
 
-=======
->>>>>>> d56fbd6757d427ed423f0d249de16023401cc6e8
-
+// =======
+// >>>>>>> d56fbd6757d427ed423f0d249de16023401cc6e8
+$ (document).ready(function(){
 
   // Initialize Firebase
  // This is the code we copied and pasted from our app page
@@ -52,14 +52,15 @@ btn.on('click', function(e) {
       // Don't refresh the page!
       event.preventDefault();
 
-      // YOUR TASK!!!
-      // Code in the logic for storing and retrieving the most recent user.
-      // Don't forget to provide initial data to your Firebase database.
+      alert ("hello")
+      
       type = $("#vehicle-type").val().trim();
       year = $("#vehicle-year").val().trim();
       make = $("#vehicle-make").val().trim();
       model = $("#vehicle-model").val().trim();
       distance = $("#distance-units").val().trim();
+
+      console.log (distance);
 
       database.ref().set({
         type: type,
@@ -68,10 +69,12 @@ btn.on('click', function(e) {
         model: model,
         distance: distance,
       });
+    });
 
-<<<<<<< HEAD
-    });
-=======
-    });
->>>>>>> 958e14910647f8cad70fe7a69753d789c7d5f525
->>>>>>> d56fbd6757d427ed423f0d249de16023401cc6e8
+});
+// <<<<<<< HEAD
+//     });
+// =======
+//     });
+// >>>>>>> 958e14910647f8cad70fe7a69753d789c7d5f525
+// >>>>>>> d56fbd6757d427ed423f0d249de16023401cc6e8
