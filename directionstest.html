@@ -11,11 +11,9 @@
         height: 100%;
       }
       /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+      html, body { 
+        height: 100%
+}
       #floating-panel {
         position: absolute;
         top: 10px;
@@ -30,9 +28,11 @@
         padding-left: 10px;
       }
     </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <div id="floating-panel">
+      <div class="container"> 
+   <div id="floating-panel">
     <b>Start: </b>
     <select id="start">
         <option value="toronto, on">Toronto</option>
@@ -48,6 +48,18 @@
       <option value="ottawa, on">Ottawa</option>
     </select>
     </div>
+      </div>
+    <!--<form>
+        <div class="form-group">
+          <label for="mapstart">START</label>
+          <input type="text" class="form-control" id="start" aria-describedby="starthelp" placeholder="Enter start address">
+        </div>
+        <div class="form-group">
+          <label for="mapend">End</label>
+          <input type="text" class="form-control" id="end" placeholder="Endplace">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>-->
     <div id="map"></div>
     <script>
       function initMap() {
@@ -64,7 +76,7 @@
         };
         document.getElementById('start').addEventListener('change', onChangeHandler);
         document.getElementById('end').addEventListener('change', onChangeHandler);
-      }
+      
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         directionsService.route({
@@ -80,9 +92,11 @@
           }
         });
       }
+    }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBL9zZE_di6v1d0Sh3wb6S9ubALeRskAns&callback=initMap">
     </script>
+    
   </body>
 </html>
