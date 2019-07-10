@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var btn = $('#button');
 
 $(window).scroll(function() {
@@ -14,7 +13,6 @@ btn.on('click', function(e) {
   $('html, body').animate({scrollTop:0}, '300');
 });
 
-=======
 
 
   // Initialize Firebase
@@ -67,4 +65,3 @@ btn.on('click', function(e) {
       });
 
     });
->>>>>>> 958e14910647f8cad70fe7a69753d789c7d5f525
