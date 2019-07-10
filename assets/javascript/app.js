@@ -49,8 +49,10 @@ $ (document).ready(function(){
       // Don't refresh the page!
       event.preventDefault();
 
+
       alert ("hello")
       
+
       type = $("#vehicle-type").val().trim();
       year = $("#vehicle-year").val().trim();
       make = $("#vehicle-make").val().trim();
@@ -69,4 +71,3 @@ $ (document).ready(function(){
     });
 
 });
-
