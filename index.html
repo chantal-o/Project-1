@@ -1,61 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Carbon Emissions Calculator</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<<<<<<< HEAD
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+      <link rel="stylesheet" type="text/js" href="assets/js/app.js"> 
+=======
+>>>>>>> 958e14910647f8cad70fe7a69753d789c7d5f525
+   </head>
+   
+   <body>
 
-<head>
-  <meta charset="utf-8">
-  <title>Test for Brighter Planet API</title>
-</head>
+         
+      <!--Back to top button-->
+      <a id="button"></a>
+      
+      <!--Map display jumbotron-->
+      <div class="jumbotron jumbotron-fluid" id="displaymap">
+         <div class="container">
+            
+            <h1 class="display-title">Emissions Calculator</h1>
+         </div>
+      </div>
+      <!-- Row for searching Edmunds API -->
+      <div class="container">
+      <div class="row">
+      <!-- First card is for handling the search parameters-->
+      <div class="col-sm-6">
+         <div class="card">
+            <div class="card-header">Vehicle Information</div>
+            <div class="card-body">
+               <!-- Here we create a form for handling the vehicle data inputs-->
+               <div class="form-group">
+                  <label for="vehicle-form">Vehicle</label>
+                  <select class="form-control" id="vehicle-type">
+                     <option></option>
+                  </select>
+               </div>
+               <div class="form-group">
+                  <label for="vehicle-form">Year</label>
+                  <select class="form-control" id="vehicle-year">
+                     <option></option>
+                  </select>
+               </div>
+               <div class="form-group">
+                  <label for="vehicle-form">Make</label>
+                  <select class="form-control" id="vehicle-make">
+                     <option></option>
+                  </select>
+               </div>
+               <div class="form-group">
+                  <label for="vehicle-form">Model</label>
+                  <select class="form-control" id="vehicle-model">
+                     <option></option>
+                  </select>
+               </div>
+               <!-- Here we create a form for handling trip mileage input and unit measurement selection-->
+               <form class="form-inline">
+               <div class="form-group mb-2">
+                  <label for="vehicle-distance-form">Trip Distance:</label>
+                  <div class="field-container">
+                     <input type="text" maxlength="6" name="mileage" class="mileage"> 
+                     <select name="vehicle-distance-unit" class="units" id="distance-units">
+                        <option value="kilometres">kilometres</option>
+                        <option value="miles">miles</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--instructions for use-->
+      </div>
+      <div class="col-sm-6">
+         <div class="card">
+            <div class="card-body">
+               <h5 class="card-title">Instructions</h5>
+               <p class="card-text">Enter the make, model and year of your vehicle to calculate your emissions.</p>
+            </div>
+         </div>
+      </div>
+      <!--comparison container-->   
+      <div class="container">
+      <div class="row">
+      <div class="col-sm-12">
+      <div class="card-deck">
+         <div class="card">
+            <div class="card-body">
+               <h5 class="card-title">Option A</h5>
+               <p class="card-text" id="comparison-a"></p>
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-body">
+               <h5 class="card-title">Option B</h5>
+               <p class="card-text" id="comparison-b"></p>
+            </div>
+         </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="assets/javascript/app.js"></script>
 
-<body>
-  <!-- Retrieved data will be dumped here -->
-  <div class="results"></div>
+      <!-- JQuery -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
+      <!-- ================================================================================== -->
 
-    // This is our API key
-    // var APIKey = "fbe9ed99-8402-469d-a1b7-b05ed17723ca";
-    // var distance = 30; // need to define this based on user input OR by google map start/endpoint
-    // var model = 3;
-    // var make = "Mazda";
-    // var year = 2012;
+      <!-- Firebase Core JavaScript Link -->
+      <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
 
-    // Here we are building the URL we need to query the database - STILL WORKING
-    // var queryURL = "http://impact.brighterplanet.com/automobile_trips?distance=" + distance + "&" + year + "&" + make + "&" + model;
-    var queryURL = "http://impact.brighterplanet.com/automobile_trips.json";
-
-    // Here we run our AJAX call to the Brighter Planet API
-    // $.ajax({
-    //   url: queryURL,
-    //   method: "GET"
-    // })
-
-    $.ajax({
-        url: queryURL,
-        method: "GET",
-        distance: "30",
-        year: "1993",
-        make: "Mazda",
-        model: "3",
-        key: "fbe9ed99-8402-469d-a1b7-b05ed17723ca"
-    })
-
-      // We store all of the retrieved data inside of an object called "response"
-      .then(function(response) {
-
-        // Log the queryURL
-        console.log(queryURL);
-
-        // Log the resulting object
-        console.log(response);
-
-        // Transfer content to HTML
-
-
-        // Log the data in the console as well
-
-      });
-  </script>
-</body>
-
+       <!-- Specific Firebase products we want -->
+       <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+   </body>
 </html>
