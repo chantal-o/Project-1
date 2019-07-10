@@ -1,4 +1,7 @@
 
+// var btn = $('#button');
+
+
 
 function initMap() {
   var directionsService = new google.maps.DirectionsService;
@@ -38,20 +41,21 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
 var btn = $('#button');
 
-$(window).scroll(function() {
-  if ($(window).scrollTop() > 300) {
-    btn.addClass('show');
-  } else {
-    btn.removeClass('show');
-  }
-});
+// $(window).scroll(function() {
+//   if ($(window).scrollTop() > 300) {
+//     btn.addClass('show');
+//   } else {
+//     btn.removeClass('show');
+//   }
+// });
 
-btn.on('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
-});
+// btn.on('click', function(e) {
+//   e.preventDefault();
+//   $('html, body').animate({scrollTop:0}, '300');
+// });
 
 
+$ (document).ready(function(){
 
   // Initialize Firebase
  // This is the code we copied and pasted from our app page
@@ -85,12 +89,17 @@ btn.on('click', function(e) {
       // Don't refresh the page!
       event.preventDefault();
 
-    
+
+      alert ("hello")
+      
+
       type = $("#vehicle-type").val().trim();
       year = $("#vehicle-year").val().trim();
       make = $("#vehicle-make").val().trim();
       model = $("#vehicle-model").val().trim();
       distance = $("#distance-units").val().trim();
+
+      console.log (distance);
 
       database.ref().set({
         type: type,
@@ -99,5 +108,6 @@ btn.on('click', function(e) {
         model: model,
         distance: distance,
       });
-
     });
+
+});
