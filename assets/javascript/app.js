@@ -1,11 +1,30 @@
 
-<<<<<<< HEAD
-=======
-// var btn = $('#button');
+
+/*Scroll to top when arrow up clicked BEGIN*/
+$(window).scroll(function() {
+  var height = $(window).scrollTop();
+  if (height > 100) {
+      $('#back-to-top').fadeIn();
+  } else {
+      $('#back-to-top').fadeOut();
+  }
+});
+$(document).ready(function() {
+  $("#back-to-top").click(function(event) {
+      event.preventDefault();
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+  });
+
+});
+/*Scroll to top when arrow up clicked END*/
 
 
 
->>>>>>> 11f39a878a6acb69857bfd10d5919e020ea620e5
+
+
+
+
 function initMap() {
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -42,32 +61,9 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   });
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> fe042cabe1a0693e37a2e31e0ad4d3acb5de60f9
-=======
->>>>>>> 11f39a878a6acb69857bfd10d5919e020ea620e5
-var btn = $('#button');
 
-// $(window).scroll(function() {
-//   if ($(window).scrollTop() > 300) {
-//     btn.addClass('show');
-//   } else {
-//     btn.removeClass('show');
-//   }
-// });
-
-// btn.on('click', function(e) {
-//   e.preventDefault();
-//   $('html, body').animate({scrollTop:0}, '300');
-// });
-
-
-<<<<<<< HEAD
-=======
 $ (document).ready(function(){
 
->>>>>>> 11f39a878a6acb69857bfd10d5919e020ea620e5
   // Initialize Firebase
  // This is the code we copied and pasted from our app page
     var config = {
@@ -119,11 +115,7 @@ $ (document).ready(function(){
         model: model,
         distance: distance,
       });
-<<<<<<< HEAD
-
-    });
-=======
     });
 
 });
->>>>>>> 11f39a878a6acb69857bfd10d5919e020ea620e5
+
