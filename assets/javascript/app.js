@@ -61,7 +61,34 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   });
 }
 
+/ ======= Building Brighter Planet Ajax Call
+var APIKey = "fbe9ed99-8402-469d-a1b7-b05ed17723ca";
 
+   // Here we are building the URL we need to query the database
+   var queryURL = "http://impact.brighterplanet.com/automobile_trips.json";
+
+   // Here we run our AJAX call to the Brighter Planet API - NEED TO USE DATA FROM GOOGLE API FOR DISTANCE
+   $.ajax({
+     url: queryURL,
+     method: "GET",
+     data: {
+       distance: "30",
+       year: "2008",
+       make: "Mazda",
+       model: "3",
+       key: APIKey
+     }
+   })
+     // We store all of the retrieved data inside of an object called "response"
+     .then(function(response) {
+
+       // Log the resulting object
+       console.log(response);
+
+       // Transfer content to HTML - TURN DESIRED RESULTS INTO A VARIABLE, APPEND TO TARGET DIV; are we using multiple divs? Or a table within one div?
+
+     });
+     
 $ (document).ready(function(){
 
   // Initialize Firebase
@@ -118,4 +145,5 @@ $ (document).ready(function(){
     });
 
 });
+
 
