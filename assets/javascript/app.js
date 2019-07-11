@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 var btn = $('#button');
 
 $(window).scroll(function() {
@@ -14,8 +13,6 @@ btn.on('click', function(e) {
   e.preventDefault();
   $('html, body').animate({scrollTop:0}, '300');
 });
-=======
-// var btn = $('#button');
 
 
 
@@ -57,19 +54,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
 var btn = $('#button');
 
-// $(window).scroll(function() {
-//   if ($(window).scrollTop() > 300) {
-//     btn.addClass('show');
-//   } else {
-//     btn.removeClass('show');
-//   }
-// });
 
-// btn.on('click', function(e) {
-//   e.preventDefault();
-//   $('html, body').animate({scrollTop:0}, '300');
-// });
->>>>>>> 4f8da105090a0942e44b32bbefeadf8baaed6295
 
 
 $ (document).ready(function(){
