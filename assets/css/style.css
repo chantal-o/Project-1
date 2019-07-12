@@ -1,63 +1,71 @@
 
+#map {
+  height: 550px;
+  width: 550px;
+}
 
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
-#displaymap{
-  height: 100%;
+
+
+.display-title {
+
+  margin-top: 0px;
 }
-/* Optional: Makes the sample page fill the window. */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-#floating-panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
+
+footer {
+  float: left;
+  bottom: 0%;
+  padding: 10px;
+  clear: both;
+  background: #777777;
+  color: white;
   text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
+  width: 100%;
+
 }
-/*id's*/
 
-
-#back-to-top {
-  width: 40px;
-  margin: 2.5rem;
-  line-height: 40px;
-  overflow: hidden;
-  z-index: 999;
-  display: none;
-  cursor: pointer;
-  -moz-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
+#return-to-top {
   position: fixed;
-  bottom: 50px;
-  right: 0;
-  background-color: #DDD;
-  color: #555;
-  text-align: center;
-  font-size: 30px;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+  display: block;
   text-decoration: none;
-
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-#back-to-top:hover {
-  background-color: #DDF;
-  color: #000;
+#return-to-top i {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-  
+#return-to-top:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+  color: #fff;
+  top: 5px;
+}
 
 
-  
+/* Extra Things */
+body{
+  background: #eee ;font-family: 'Open Sans', sans-serif;}h3{font-size: 30px; font-weight: 400;text-align: center;margin-top: 50px;}h3 i{color: #444;}
 
-
-  /*classes*/

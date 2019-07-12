@@ -1,27 +1,16 @@
-
-
-/*Scroll to top when arrow up clicked BEGIN*/
+// ===== Scroll to Top ==== 
 $(window).scroll(function() {
-  var height = $(window).scrollTop();
-  if (height > 100) {
-      $('#back-to-top').fadeIn();
+  if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+      $('#return-to-top').fadeIn(200);    // Fade in the arrow
   } else {
-      $('#back-to-top').fadeOut();
+      $('#return-to-top').fadeOut(200);   // Else fade out the arrow
   }
 });
-$(document).ready(function() {
-  $("#back-to-top").click(function(event) {
-      event.preventDefault();
-      $("html, body").animate({ scrollTop: 0 }, "slow");
-      return false;
-  });
-
+$('#return-to-top').click(function() {      // When arrow is clicked
+  $('body,html').animate({
+      scrollTop : 0                       // Scroll to top of body
+  }, 500);
 });
-/*Scroll to top when arrow up clicked END*/
-
-
-
-
 
 
 
@@ -31,27 +20,29 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 7,
     center: {lat: 43.6629, lng: -79.3957}
+    
   });
   directionsDisplay.setMap(map);
-
   var onChangeHandler = function() {
     calculateAndDisplayRoute(directionsService, directionsDisplay);
   };
-  document.getElementById('start').addEventListener('change', onChangeHandler);
-  document.getElementById('end').addEventListener('change', onChangeHandler);
+  //document.getElementById('userstart').addEventListener('change', onChangeHandler);
+  document.getElementById('submit').addEventListener('click', onChangeHandler);
+
+  
 }
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
+
+ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   directionsService.route({
-    origin: document.getElementById('start').value,
-    destination: document.getElementById('end').value,
+    origin: document.getElementById('userstart').value,
+    destination: document.getElementById('userend').value,
     travelMode: 'DRIVING'
   }, function(response, status) {
       console.log(response);
     if (status === 'OK') {
-
       directionsDisplay.setDirections(response);
-      
       var distance = response.routes[0].legs[0].distance.value; 
       console.log(distance);
       $("#tripdistance").val(distance/1000);
@@ -61,8 +52,18 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   });
 }
 
-/ ======= Building Brighter Planet Ajax Call
-var APIKey = "fbe9ed99-8402-469d-a1b7-b05ed17723ca";
+
+
+
+$("#submit").on("click", function(){
+event.preventDefault();
+
+});
+
+$ (document).ready(function(){
+
+
+  var APIKey = "fbe9ed99-8402-469d-a1b7-b05ed17723ca";
 
    // Here we are building the URL we need to query the database
    var queryURL = "http://impact.brighterplanet.com/automobile_trips.json";
@@ -89,8 +90,6 @@ var APIKey = "fbe9ed99-8402-469d-a1b7-b05ed17723ca";
 
      });
      
-$ (document).ready(function(){
-
   // Initialize Firebase
  // This is the code we copied and pasted from our app page
     var config = {
@@ -117,9 +116,10 @@ $ (document).ready(function(){
     var make = "";
     var model = "";
     var distance = "";
+    var start = "";
 
     // Capture Button Click
-    $("#add-user").on("click", function(event) {
+    $("#submit").on("click", function(event) {
       // Don't refresh the page!
       event.preventDefault();
 
@@ -132,15 +132,18 @@ $ (document).ready(function(){
       make = $("#vehicle-make").val().trim();
       model = $("#vehicle-model").val().trim();
       distance = $("#distance-units").val().trim();
+      start = $("#userstart").val().trim();
 
       console.log (distance);
 
-      database.ref().set({
+      database.ref().push({
         type: type,
         year: year,
         make: make,
         model: model,
         distance: distance,
+        start: start,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
       });
     });
 
