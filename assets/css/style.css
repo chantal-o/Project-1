@@ -11,7 +11,7 @@
   margin-top: 0px;
 }
 
-footer {
+footer{
   float: left;
   bottom: 0%;
   padding: 10px;
@@ -57,15 +57,80 @@ footer {
   transition: all 0.3s ease;
 }
 #return-to-top:hover {
-  background: rgba(0, 0, 0, 0.9);
+  background: tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}0, 0, 0, 0.9);
 }
 #return-to-top:hover i {
   color: #fff;
   top: 5px;
 }
 
+#logo {
+ margin-right: 18rem;
+ margin-left: 2rem;
 
+
+ 
+}
+
+#submit {
+  margin-right:0%;
+}
 /* Extra Things */
 body{
   background: #eee ;font-family: 'Open Sans', sans-serif;}h3{font-size: 30px; font-weight: 400;text-align: center;margin-top: 50px;}h3 i{color: #444;}
 
+ 
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    top: -5px;
+    left: 105%; 
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  h1{
+    font-family:'Jura', cursive;
+   
+    
+  }
+  
