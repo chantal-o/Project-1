@@ -166,7 +166,7 @@ $(document).ready(function() {
       $("#vehicle-type").val(snapshot.val().type);
       $("#vehicle-year").val(snapshot.val().year);
       $("#vehicle-make").val(snapshot.val().make);
-      $("#vehicle-mode").val(snapshot.val().model);
+      $("#vehicle-model").val(snapshot.val().model);
       $("#distance-units").val(snapshot.val().distance);
       $("#userstart").val(snapshot.val().start);
     });
