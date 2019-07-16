@@ -89,7 +89,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
    var APIModel = $("#vehicle-model");
 
       // URL to to query the Brighter Planet database
-      var queryURL = "http://impact.brighterplanet.com/automobile_trips.json";
+      var queryURL = "https://impact.brighterplanet.com/automobile_trips.json";
 
       // Here we run our AJAX call to the Brighter Planet API
       $.ajax({
