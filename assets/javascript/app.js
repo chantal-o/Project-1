@@ -140,7 +140,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             model: model,
             distance: distance,
             start: start,
-            emission: CO2Emitted,
+            emission: CO2EmittedTd,
             dateAdded: firebase.database.ServerValue.TIMESTAMP
           });
         });
@@ -166,8 +166,7 @@ $(document).ready(function() {
       $("#vehicle-type").val(snapshot.val().type);
       $("#vehicle-year").val(snapshot.val().year);
       $("#vehicle-make").val(snapshot.val().make);
-      $("#vehicle-model").val(snapshot.val().model);
-      $("#distance-units").val(snapshot.val().distance);
+      $("#vehicle-model").val(snapshot.val().model);3
       $("#userstart").val(snapshot.val().start);
     });
 });
